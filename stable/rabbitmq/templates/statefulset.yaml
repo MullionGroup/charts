@@ -132,6 +132,8 @@ spec:
               secretKeyRef:
                 name: {{ template "rabbitmq.fullname" . }}
                 key: rabbitmq-password
+      securityContext:
+        fsGroup: 1001                
       volumes:
         - name: config-volume
           configMap:
